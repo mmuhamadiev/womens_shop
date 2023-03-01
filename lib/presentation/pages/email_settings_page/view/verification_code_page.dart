@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:womens_shop/presentation/app_theme/app_colors/app_colors.dart';
 import 'package:womens_shop/presentation/constraints/constraints.dart';
 import 'package:womens_shop/presentation/widgets/custom_text_button.dart';
-import '../../widgets/custom_app_bar.dart';
+import '../../../widgets/custom_app_bar.dart';
 
 class VerificationCodePage extends StatefulWidget {
   VerificationCodePage({Key? key}) : super(key: key);
@@ -34,13 +35,15 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
     final double scaleOfWidth = width / mockUpWidth;
     final double scaleOfHeight = height / mockUpHeight;
 
+    final ThemeData theme = Theme.of(context);
+
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus!.unfocus();
       },
       child: Scaffold(
-        backgroundColor: mainBgColor,
-        appBar: customAppBar(context, scaleOfHeight, 'Email verification'),
+        backgroundColor: AppColors.staticBlackColor,
+        appBar: customAppBar(context, scaleOfHeight, 'Email verification', false),
         body: Center(
           child: Container(
             margin: EdgeInsets.only(top: topStatusBarHeight, left:  10),
@@ -54,17 +57,12 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                     children: [
                       Text(
                         'Verification code',
-                        style: plusJakarta700WhiteStyle.copyWith(
-                          fontSize: 19,
-                        ),
+                        style: theme.textTheme.bodySmall
                       ),
                       Text(
                         'Verification code has been sent to email\nb**************3@gmail.com',
                         textAlign: TextAlign.center,
-                        style: plusJakarta400WhiteStyle.copyWith(
-                          color: staticWhiteColor.withOpacity(0.8),
-                          fontSize: 14,
-                        ),
+                        style: theme.textTheme.bodySmall
                       ),
                     ],
                   ),
@@ -72,7 +70,7 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                 SizedBox(
                   height: scaleOfHeight * 15,
                 ),
-                customTextButton('Resend', scaleOfHeight, () {},),
+                customTextButton(context,'Resend', scaleOfHeight, () {},),
                 SizedBox(
                   height: scaleOfHeight * 40,
                 ),
@@ -86,23 +84,23 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         child: TextField(
                           controller: _controller1,
                           keyboardType: TextInputType.number,
-                          cursorColor: mainButtonColor,
-                          style: plusJakarta700WhiteStyle,
+                          cursorColor: AppColors.mainButtonColor,
+                          style: theme.textTheme.bodySmall,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: staticWhiteColor.withOpacity(0.1),
-                            constraints: BoxConstraints(
-                              maxHeight: scaleOfHeight * 70,
-                              maxWidth: width * 0.9,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(scaleOfWidth * 9),
-                              ),
-                            ),
-                          ),
+                          // decoration: InputDecoration(
+                          //   filled: true,
+                          //   fillColor: AppColors.staticWhiteColor.withOpacity(0.1),
+                          //   constraints: BoxConstraints(
+                          //     maxHeight: scaleOfHeight * 70,
+                          //     maxWidth: width * 0.9,
+                          //   ),
+                          //   border: OutlineInputBorder(
+                          //     borderSide: BorderSide.none,
+                          //     borderRadius: BorderRadius.all(
+                          //       Radius.circular(scaleOfWidth * 9),
+                          //     ),
+                          //   ),
+                          // ),
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
@@ -124,23 +122,23 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         child: TextField(
                           controller: _controller2,
                           keyboardType: TextInputType.number,
-                          cursorColor: mainButtonColor,
-                          style: plusJakarta700WhiteStyle,
+                          cursorColor: AppColors.mainButtonColor,
+                          style: theme.textTheme.bodySmall,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: staticWhiteColor.withOpacity(0.1),
-                            constraints: BoxConstraints(
-                              maxHeight: scaleOfHeight * 70,
-                              maxWidth: width * 0.9,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(scaleOfWidth * 9),
-                              ),
-                            ),
-                          ),
+                          // decoration: InputDecoration(
+                          //   filled: true,
+                          //   fillColor: AppColors.staticWhiteColor.withOpacity(0.1),
+                          //   constraints: BoxConstraints(
+                          //     maxHeight: scaleOfHeight * 70,
+                          //     maxWidth: width * 0.9,
+                          //   ),
+                          //   border: OutlineInputBorder(
+                          //     borderSide: BorderSide.none,
+                          //     borderRadius: BorderRadius.all(
+                          //       Radius.circular(scaleOfWidth * 9),
+                          //     ),
+                          //   ),
+                          // ),
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
@@ -162,23 +160,23 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         child: TextField(
                           controller: _controller3,
                           keyboardType: TextInputType.number,
-                          cursorColor: mainButtonColor,
-                          style: plusJakarta700WhiteStyle,
+                          cursorColor: AppColors.mainButtonColor,
+                          style: theme.textTheme.bodySmall,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: staticWhiteColor.withOpacity(0.1),
-                            constraints: BoxConstraints(
-                              maxHeight: scaleOfHeight * 70,
-                              maxWidth: width * 0.9,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(scaleOfWidth * 9),
-                              ),
-                            ),
-                          ),
+                          // decoration: InputDecoration(
+                          //   filled: true,
+                          //   fillColor: AppColors.staticWhiteColor.withOpacity(0.1),
+                          //   constraints: BoxConstraints(
+                          //     maxHeight: scaleOfHeight * 70,
+                          //     maxWidth: width * 0.9,
+                          //   ),
+                          //   border: OutlineInputBorder(
+                          //     borderSide: BorderSide.none,
+                          //     borderRadius: BorderRadius.all(
+                          //       Radius.circular(scaleOfWidth * 9),
+                          //     ),
+                          //   ),
+                          // ),
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
@@ -200,23 +198,23 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         child: TextField(
                           controller: _controller4,
                           keyboardType: TextInputType.number,
-                          cursorColor: mainButtonColor,
-                          style: plusJakarta700WhiteStyle,
+                          cursorColor: AppColors.mainButtonColor,
+                          style: theme.textTheme.bodySmall,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: staticWhiteColor.withOpacity(0.1),
-                            constraints: BoxConstraints(
-                              maxHeight: scaleOfHeight * 70,
-                              maxWidth: width * 0.9,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(scaleOfWidth * 9),
-                              ),
-                            ),
-                          ),
+                          // decoration: InputDecoration(
+                          //   filled: true,
+                          //   fillColor: AppColors.staticWhiteColor.withOpacity(0.1),
+                          //   constraints: BoxConstraints(
+                          //     maxHeight: scaleOfHeight * 70,
+                          //     maxWidth: width * 0.9,
+                          //   ),
+                          //   border: OutlineInputBorder(
+                          //     borderSide: BorderSide.none,
+                          //     borderRadius: BorderRadius.all(
+                          //       Radius.circular(scaleOfWidth * 9),
+                          //     ),
+                          //   ),
+                          // ),
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
@@ -238,23 +236,23 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         child: TextField(
                           controller: _controller5,
                           keyboardType: TextInputType.number,
-                          cursorColor: mainButtonColor,
-                          style: plusJakarta700WhiteStyle,
+                          cursorColor: AppColors.mainButtonColor,
+                          style: theme.textTheme.bodySmall,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: staticWhiteColor.withOpacity(0.1),
-                            constraints: BoxConstraints(
-                              maxHeight: scaleOfHeight * 70,
-                              maxWidth: width * 0.9,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(scaleOfWidth * 9),
-                              ),
-                            ),
-                          ),
+                          // decoration: InputDecoration(
+                          //   filled: true,
+                          //   fillColor: AppColors.staticWhiteColor.withOpacity(0.1),
+                          //   constraints: BoxConstraints(
+                          //     maxHeight: scaleOfHeight * 70,
+                          //     maxWidth: width * 0.9,
+                          //   ),
+                          //   border: OutlineInputBorder(
+                          //     borderSide: BorderSide.none,
+                          //     borderRadius: BorderRadius.all(
+                          //       Radius.circular(scaleOfWidth * 9),
+                          //     ),
+                          //   ),
+                          // ),
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
@@ -275,23 +273,23 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                         child: TextField(
                           controller: _controller6,
                           keyboardType: TextInputType.number,
-                          cursorColor: mainButtonColor,
-                          style: plusJakarta700WhiteStyle,
+                          cursorColor: AppColors.mainButtonColor,
+                          style: theme.textTheme.bodySmall,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: staticWhiteColor.withOpacity(0.1),
-                            constraints: BoxConstraints(
-                              maxHeight: scaleOfHeight * 70,
-                              maxWidth: width * 0.9,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(scaleOfWidth * 9),
-                              ),
-                            ),
-                          ),
+                          // decoration: InputDecoration(
+                          //   filled: true,
+                          //   fillColor: AppColors.staticWhiteColor.withOpacity(0.1),
+                          //   constraints: BoxConstraints(
+                          //     maxHeight: scaleOfHeight * 70,
+                          //     maxWidth: width * 0.9,
+                          //   ),
+                          //   border: OutlineInputBorder(
+                          //     borderSide: BorderSide.none,
+                          //     borderRadius: BorderRadius.all(
+                          //       Radius.circular(scaleOfWidth * 9),
+                          //     ),
+                          //   ),
+                          // ),
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),

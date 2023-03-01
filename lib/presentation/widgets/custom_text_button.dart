@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:womens_shop/presentation/constraints/constraints.dart';
+import 'package:womens_shop/presentation/app_theme/app_colors/app_colors.dart';
 
-TextButton customTextButton( String name, double scaleOfHeight, Function() sendFunc){
+TextButton customTextButton(BuildContext context, String name, double scaleOfHeight, Function() sendFunc){
+  ThemeData theme = Theme.of(context);
   return TextButton(
     onPressed: sendFunc,
     child: Text(
       name,
-      style: plusJakarta700WhiteStyle.copyWith(
+      style: theme.textTheme.bodySmall!.copyWith(
           fontSize: scaleOfHeight * 16,
-          color: mainButtonColor),
+          color: AppColors.mainButtonColor),
     ),
   );
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:womens_shop/business/bloc/bloc_state_manager_bloc.dart';
-import 'package:womens_shop/presentation/constraints/constraints.dart';
+import 'package:womens_shop/presentation/app_theme/app_theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'business/navigation_router/go_router.dart';
 
@@ -20,11 +20,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-          useMaterial3: true,
-
-          primarySwatch: primaryColor,
-        ),
+        theme: kShopTheme,
         routerConfig: router.router,
       ),
     );

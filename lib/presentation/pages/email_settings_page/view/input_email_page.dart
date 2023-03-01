@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:womens_shop/presentation/app_theme/app_colors/app_colors.dart';
 import 'package:womens_shop/presentation/constraints/constraints.dart';
 import 'package:womens_shop/presentation/widgets/custom_app_bar.dart';
 import 'package:womens_shop/presentation/widgets/custom_filled_text_button.dart';
 import 'package:womens_shop/presentation/widgets/custom_textfield.dart';
 
-import '../../widgets/custom_agreement_checkbox.dart';
+import '../../../widgets/custom_agreement_checkbox.dart';
 
 class InputEmailPage extends StatelessWidget {
   InputEmailPage({Key? key}) : super(key: key);
@@ -21,25 +22,27 @@ class InputEmailPage extends StatelessWidget {
     final double scaleOfWidth = width / mockUpWidth;
     final double scaleOfHeight = height / mockUpHeight;
 
+    final ThemeData theme = Theme.of(context);
+
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus!.unfocus();
       },
       child: Scaffold(
-        backgroundColor: mainBgColor,
-        appBar: customAppBar(context, scaleOfHeight, 'Input Email'),
+        backgroundColor: AppColors.staticBlackColor,
+        appBar: customAppBar(context, scaleOfHeight, 'Input Email', false),
         body: Container(
           margin: EdgeInsets.only(top: topStatusBarHeight),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              customTextField('New email', scaleOfHeight, scaleOfWidth, width,
+              customTextField(context, 'New email', scaleOfHeight, scaleOfWidth, width,
                   emailController, false, () {}),
               SizedBox(
                 height: scaleOfHeight * 30,
               ),
-              customTextField('Verification code', scaleOfHeight, scaleOfWidth,
+              customTextField(context, 'Verification code', scaleOfHeight, scaleOfWidth,
                   width, emailController, true, () {}),
               SizedBox(
                 height: scaleOfHeight * 30,
@@ -56,11 +59,10 @@ class InputEmailPage extends StatelessWidget {
                 scaleOfWidth: scaleOfWidth,
                 scaleOfHeight: scaleOfHeight,
                 width: width,
-                color: mainButtonColor,
+                color: AppColors.mainButtonColor,
                 child: Text(
                   'Submit',
-                  style: plusJakarta700BlackStyle.copyWith(
-                      fontSize: scaleOfHeight * 18),
+                  style: theme.textTheme.titleMedium
                 ),
               ),
             ],

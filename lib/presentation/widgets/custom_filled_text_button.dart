@@ -21,19 +21,15 @@ class CustomFilledTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return SizedBox(
       width: width * 0.9,
       height: scaleOfHeight * 70,
       child: FilledButton(
         onPressed: func,
-        style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll<Color>(color),
-          shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(scaleOfWidth * 9),
-            ),
-          ),
-        ),
+        style: theme.filledButtonTheme.style!.copyWith(
+    backgroundColor: MaterialStatePropertyAll<Color>(color)
+    ),
         child: child,
       ),
     );

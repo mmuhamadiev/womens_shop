@@ -19,17 +19,13 @@ class CustomOutlinedTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return SizedBox(
       width: width * 0.9,
       height: scaleOfHeight * 70,
       child: OutlinedButton(
         onPressed: func,
-        style: outlinedButtonStyle.copyWith(shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(scaleOfWidth * 9),
-          ),
-        ),
-        ),
+        style: theme.outlinedButtonTheme.style,
         child: child,
       ),
     );

@@ -32,3 +32,7 @@ flutter:
     - family: PlusJakartaSans
       fonts:
         - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+  assets:
+    - assets/
+    - assets/fonts/
+    - assets/icons/

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:womens_shop/presentation/app_theme/app_colors/app_colors.dart';
 import 'package:womens_shop/presentation/constraints/constraints.dart';
 import 'package:womens_shop/presentation/widgets/custom_filled_text_button.dart';
 import 'package:womens_shop/presentation/widgets/custom_outlined_text_button.dart';
-import '../../widgets/custom_app_bar.dart';
+import '../../../widgets/custom_app_bar.dart';
 
 class VerifyEmailPage extends StatelessWidget {
   const VerifyEmailPage({Key? key}) : super(key: key);
@@ -18,9 +19,11 @@ class VerifyEmailPage extends StatelessWidget {
     final double scaleOfWidth = width / mockUpWidth;
     final double scaleOfHeight = height / mockUpHeight;
 
+    final ThemeData theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: mainBgColor,
-      appBar: customAppBar(context, scaleOfHeight, 'Email'),
+      backgroundColor: AppColors.staticBlackColor,
+      appBar: customAppBar(context, scaleOfHeight, 'Email', false),
       body: Center(
         child: Container(
           margin: EdgeInsets.only(top: topStatusBarHeight, left:  10),
@@ -33,15 +36,12 @@ class VerifyEmailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Verify Email',
-                      style: plusJakarta700WhiteStyle.copyWith(
-                          fontSize: 16, color: staticGreyColor),
+                      'Binding Email',
+                      style: theme.textTheme.bodyMedium
                     ),
                     Text(
                       'b**************3@gmail.com',
-                      style: plusJakarta700WhiteStyle.copyWith(
-                        fontSize: 17,
-                      ),
+                      style: theme.textTheme.bodyLarge
                     ),
                   ],
                 ),
@@ -55,12 +55,11 @@ class VerifyEmailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                        margin: EdgeInsets.only(bottom: scaleOfWidth * 10),
+                        margin: EdgeInsets.only(bottom: scaleOfWidth * 5),
                         child: Text(
                           'Email has been verified successfully, 100 points are already in your pocket',
                           textAlign: TextAlign.center,
-                          style: plusJakarta500WhiteStyle.copyWith(
-                              fontSize: 14, color: staticGreyColor),
+                          style: theme.textTheme.bodySmall
                         ),),
                     CustomOutlinedTextButton(
                       func: () {
@@ -71,8 +70,7 @@ class VerifyEmailPage extends StatelessWidget {
                       width: width,
                       child: Text(
                         'Change',
-                        style: plusJakarta700WhiteStyle.copyWith(
-                            fontSize: scaleOfHeight * 18),
+                        style: theme.textTheme.titleMedium
                       ),
                     ),
                   ],

@@ -1,12 +1,11 @@
 import 'package:go_router/go_router.dart';
-import 'package:womens_shop/presentation/pages/email_settings_page/input_email_page.dart';
-import 'package:womens_shop/presentation/pages/email_settings_page/verification_code_page.dart';
-import 'package:womens_shop/presentation/pages/email_settings_page/verify_email_page.dart';
-import 'package:womens_shop/presentation/pages/home_page.dart';
-import 'package:womens_shop/presentation/pages/not_found_page.dart';
-
-import '../../presentation/pages/email_settings_page/confirmation_email_page.dart';
-import '../../presentation/pages/email_settings_page/verified_email_change_page.dart';
+import 'package:womens_shop/presentation/pages/email_settings_page/view/input_email_page.dart';
+import 'package:womens_shop/presentation/pages/email_settings_page/view/verification_code_page.dart';
+import 'package:womens_shop/presentation/pages/email_settings_page/view/verified_email_change_page.dart';
+import 'package:womens_shop/presentation/pages/email_settings_page/view/verify_email_page.dart';
+import 'package:womens_shop/presentation/pages/home_page/view/home_page.dart';
+import 'package:womens_shop/presentation/pages/not_found_page/view/not_found_page.dart';
+import '../../presentation/pages/email_settings_page/view/confirmation_email_page.dart';
 
 class GoRouters {
   // GoRouter configuration

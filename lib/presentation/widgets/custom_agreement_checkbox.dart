@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:womens_shop/business/bloc/bloc_state_manager_bloc.dart';
-
-import '../constraints/constraints.dart';
+import 'package:womens_shop/presentation/app_theme/app_colors/app_colors.dart';
 
 class CustomAgreementCheckBox extends StatelessWidget {
   const CustomAgreementCheckBox({Key? key, required this.width, required this.scaleOfHeight}) : super(key: key);
@@ -14,7 +13,7 @@ class CustomAgreementCheckBox extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final bloc = BlocProvider.of<StateManagerBloc>(context);
-
+    final ThemeData theme = Theme.of(context);
     return Center(
       child: SizedBox(
         width: width * 0.9,
@@ -28,7 +27,7 @@ class CustomAgreementCheckBox extends StatelessWidget {
                   return Transform.scale(
                     scale: 1.4,
                     child: Checkbox(
-                        activeColor: mainButtonColor,
+                        activeColor: AppColors.mainButtonColor,
                         shape: const CircleBorder(),
                         materialTapTargetSize: MaterialTapTargetSize.padded,
                         value: state.isChecked,
@@ -42,8 +41,8 @@ class CustomAgreementCheckBox extends StatelessWidget {
               child: Text(
                   'By registering, you agree to receive exclusive offers and latest news by email. If you wish to no longer receive any email, please check the unsubscribe option.',
                   maxLines: 3,
-                  style: plusJakarta500WhiteStyle.copyWith(
-                      fontSize: 11, color: staticGreyColor)),
+                  style: theme.textTheme.bodySmall!.copyWith(
+                      fontSize: 11, color: AppColors.staticGreyColor)),
             ),
           ],
         ),
